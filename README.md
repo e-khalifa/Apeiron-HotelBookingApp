@@ -3,6 +3,9 @@ A new Flutter project.
 
 <div>
 <img src="https://github.com/e-khalifa/Apeiron-HotelBookingApp/blob/main/assets/UI/ApeironApp.gif">
+<div>
+
+<div>
 <img src="https://github.com/e-khalifa/Apeiron-HotelBookingApp/blob/main/assets/UI/splashScreen.JPG">
 <img src="https://github.com/e-khalifa/Apeiron-HotelBookingApp/blob/main/assets/UI/Home1.JPG">
 <img src="https://github.com/e-khalifa/Apeiron-HotelBookingApp/blob/main/assets/UI/Home2.JPG">
