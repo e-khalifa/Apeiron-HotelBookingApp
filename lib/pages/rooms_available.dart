@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_booking_app/widgets/room_card.dart';
 
 import '../models/rooms.dart';
 import '../widgets/room_booking_dialog.dart';
+import '../widgets/room_card.dart';
 
 class RoomsAvailable extends StatelessWidget {
   //to access radio buttons selected value & slidebarvalues
