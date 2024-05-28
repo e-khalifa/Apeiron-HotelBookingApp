@@ -7,12 +7,12 @@ import '../widgets/room_booking_dialog.dart';
 class RoomsAvailable extends StatelessWidget {
   //to access radio buttons selected value & slidebarvalues
   final double Function() guests;
-  final String Function() selectedRoomView;
+  final String selectedRoomView;
 
   RoomsAvailable(
       {super.key, required this.guests, required this.selectedRoomView}) {
     print('Guests: ${guests()}');
-    print('Selected Room View: ${selectedRoomView()}');
+    print('Selected Room View: $selectedRoomView');
   }
 
 //Rooms data
@@ -92,8 +92,7 @@ class RoomsAvailable extends StatelessWidget {
           /*Identical doesn't compare the contents of objects or the encoding,
            but their memory location, 
            that's why it didn't triger the unrelated type equality checks like == */
-          identical(
-              Room.view.toLowerCase(), selectedRoomView().toLowerCase())) {
+          identical(Room.view.toLowerCase(), selectedRoomView.toLowerCase())) {
         filteredRooms.add(Room);
       }
     }
@@ -136,7 +135,7 @@ class RoomsAvailable extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    'There are currently no available rooms with the ${selectedRoomView} for your specified number of guests',
+                    'There are currently no available rooms with $selectedRoomView view for your specified number of guests',
                     style: TextStyle(fontSize: 15),
                     textAlign: TextAlign.center,
                   ),

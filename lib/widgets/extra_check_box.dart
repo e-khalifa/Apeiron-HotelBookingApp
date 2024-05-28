@@ -7,7 +7,16 @@ class Extra extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Text(
+          'Extras:',
+          style: TextStyle(
+            fontSize: 18,
+            color: Colors.brown.shade800,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         FlutGroupedButtons<Map<String, dynamic>>(
           titleCheckSpace: 10,
           activeColor: Colors.brown.shade800,

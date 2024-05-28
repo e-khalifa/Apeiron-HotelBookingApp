@@ -46,6 +46,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 slideRightWidget(newPage: HomePage(), context: context);
               },
               style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.only(left: 10, right: 5),
                 backgroundColor: Colors.transparent,
                 foregroundColor: Colors.white,
                 elevation: 5,
@@ -64,7 +65,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       fontFamily: 'AnticDidone',
                     ),
                   ),
-                  SizedBox(width: 30),
+                  SizedBox(width: 60),
                   Icon(Icons.arrow_circle_right_outlined),
                 ],
               ),

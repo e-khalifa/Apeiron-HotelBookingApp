@@ -1,11 +1,11 @@
-import 'package:flut_grouped_buttons/flut_grouped_buttons.dart';
 import 'package:flutter/material.dart';
-import 'package:hotel_booking_app/pages/rooms-available.dart';
-import 'package:hotel_booking_app/widgets/check_dates.dart';
-import 'package:hotel_booking_app/widgets/slider.dart';
 import 'package:route_transitions/route_transitions.dart';
 
+import '../widgets/check_dates.dart';
 import '../widgets/extra_check_box.dart';
+import '../widgets/room_view_radio_check.dart';
+import '../widgets/slider.dart';
+import 'rooms_available.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -19,7 +19,6 @@ class _MyWidgetState extends State<HomePage> {
   double childernNumber = 0;
   String selectedView = '';
 
-  String selectedRoomView() => selectedView;
   double guests() => adultsNumber + childernNumber;
 
   //simple validation check (Guests, selectedRoomView)
@@ -28,7 +27,7 @@ class _MyWidgetState extends State<HomePage> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Please State the Guests Number')),
       );
-    } else if (selectedRoomView() == '') {
+    } else if (selectedView == '') {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
             content: Text(
@@ -38,7 +37,7 @@ class _MyWidgetState extends State<HomePage> {
       slideRightWidget(
         newPage: RoomsAvailable(
           guests: guests,
-          selectedRoomView: selectedRoomView,
+          selectedRoomView: selectedView,
         ),
         context: context,
       );
@@ -84,7 +83,6 @@ class _MyWidgetState extends State<HomePage> {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CheckDates(label: 'Check-in Date:  '),
                       CheckDates(
@@ -117,40 +115,15 @@ class _MyWidgetState extends State<HomePage> {
 
                       //calling extra
                       SizedBox(height: 20),
-                      Text(
-                        'Extras:',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.brown.shade800,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+
                       Extra(),
                       SizedBox(height: 20),
-                      Text(
-                        'View:',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.brown.shade800,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      FlutGroupedButtons<Map<String, dynamic>>(
-                        isRadio: true,
-                        titleCheckSpace: 10,
-                        activeColor: Colors.brown.shade800,
-                        idKey: 'id',
-                        valueKey: 'View',
-                        data: [
-                          {'id': 'city', 'View': 'City View'},
-                          {'id': 'sea', 'View': 'Sea View'},
-                          {'id': 'garden', 'View': 'Garden View'},
-                        ],
-                        onChanged: (value) {
+                      RoomViewSelection(
+                        selectedItem: selectedView,
+                        onChanged: (newValue) {
                           setState(() {
-                            selectedView = value;
+                            selectedView = newValue;
                           });
-                          print(value);
                         },
                       ),
                       SizedBox(height: 20),

@@ -30,21 +30,21 @@ class _MyWidgetState extends State<SlideBar> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        Slider(
-          value: widget.value,
-          onChanged: (number) {
-            setState(() {
-              widget.value = number;
-            });
-            widget.onChanged(number); // Update guests' numbers here
-
-            print(' value is${widget.value}');
-            print(' number is$number');
-          },
-          min: 0,
-          max: 6,
-          divisions: 6,
-          activeColor: Colors.brown.shade800,
+        Card(
+          color: Colors.white,
+          child: Slider(
+            value: widget.value,
+            onChanged: (number) {
+              setState(() {
+                widget.value = number;
+              });
+              widget.onChanged(number); // Update guests' numbers here
+            },
+            min: 0,
+            max: 6,
+            divisions: 6,
+            activeColor: Colors.brown.shade800,
+          ),
         ),
       ],
     );

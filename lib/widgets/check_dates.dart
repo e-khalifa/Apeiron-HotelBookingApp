@@ -24,7 +24,7 @@ class _CheckDatesState extends State<CheckDates> {
               fontWeight: FontWeight.bold,
               color: Colors.brown.shade800),
         ),
-        SizedBox(width: 200),
+        SizedBox(width: 204),
         Text(
           '${DateFormat('MMM d, yyyy').format(selectedDate)}',
           style: TextStyle(fontSize: 13.5),
