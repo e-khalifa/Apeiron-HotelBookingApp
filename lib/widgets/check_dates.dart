@@ -43,7 +43,7 @@ class _CheckDatesState extends State<CheckDates> {
               });
             }
           },
-          icon: Icon(FontAwesomeIcons.calendarCheck),
+          icon: Icon(FontAwesomeIcons.calendar),
           color: Colors.brown.shade800,
         ),
       ],

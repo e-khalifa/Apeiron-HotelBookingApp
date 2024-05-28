@@ -8,32 +8,41 @@ import '../widgets/slider.dart';
 import 'rooms_available.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
-  _MyWidgetState createState() => _MyWidgetState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MyWidgetState extends State<HomePage> {
+class _HomePageState extends State<HomePage> {
   double adultsNumber = 0;
   double childernNumber = 0;
   String selectedView = '';
 
   double guests() => adultsNumber + childernNumber;
 
-  //simple validation check (Guests, selectedRoomView)
+  //simple validation check (Guests, selecteView)
   void onNextButtonPressed() {
     if (guests() == 0) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Please State the Guests Number')),
+        SnackBar(
+            backgroundColor: Colors.red,
+            content: Text(
+              'Please state the number of guests',
+              textAlign: TextAlign.center,
+            )),
       );
     } else if (selectedView == '') {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
+            backgroundColor: Colors.red,
             content: Text(
-                'Please Choose Your Preferred Room-View from the List "View"')),
+              'Please select your preferred room view from the list "View"',
+              textAlign: TextAlign.center,
+            )),
       );
     } else {
+      //All good? navigate to next page
       slideRightWidget(
         newPage: RoomsAvailable(
           guests: guests,
@@ -77,6 +86,7 @@ class _MyWidgetState extends State<HomePage> {
           Padding(
               padding: const EdgeInsets.all(5),
               child: Card(
+                //because there is a card on this, "color" didn't show white, so i had to use surfacetint
                 surfaceTintColor: Colors.white,
                 elevation: 8,
                 child: Padding(
@@ -84,12 +94,14 @@ class _MyWidgetState extends State<HomePage> {
                       const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                   child: Column(
                     children: [
+                      //Calling Checkdates
                       CheckDates(label: 'Check-in Date:  '),
                       CheckDates(
                         label: 'Check-out Date:',
                       ),
-
                       SizedBox(height: 8),
+
+                      //dividing line
                       Divider(color: Colors.brown.shade800),
                       SizedBox(height: 8),
 
@@ -112,12 +124,13 @@ class _MyWidgetState extends State<HomePage> {
                           });
                         },
                       ),
-
-                      //calling extra
                       SizedBox(height: 20),
 
+                      //Calling Extra
                       Extra(),
                       SizedBox(height: 20),
+
+                      //Calling View
                       RoomViewSelection(
                         selectedItem: selectedView,
                         onChanged: (newValue) {
@@ -127,6 +140,8 @@ class _MyWidgetState extends State<HomePage> {
                         },
                       ),
                       SizedBox(height: 20),
+
+                      //Next button - right
                       Align(
                         alignment: Alignment.centerRight,
                         child: ElevatedButton(
@@ -148,7 +163,7 @@ class _MyWidgetState extends State<HomePage> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 5),
+                      SizedBox(height: 10),
                     ],
                   ),
                 ),

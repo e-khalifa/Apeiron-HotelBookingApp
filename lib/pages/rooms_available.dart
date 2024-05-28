@@ -126,7 +126,7 @@ class RoomsAvailable extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'SORRY! (⁠╥⁠﹏⁠╥⁠)',
+                    'Oops! (⁠╥⁠﹏⁠╥⁠)',
                     style: TextStyle(
                       fontSize: 35,
                       fontWeight: FontWeight.bold,
@@ -135,7 +135,7 @@ class RoomsAvailable extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    'There are currently no available rooms with $selectedRoomView view for your specified number of guests',
+                    'It seems there are no available rooms with $selectedRoomView view for the number of guests you’ve specified',
                     style: TextStyle(fontSize: 15),
                     textAlign: TextAlign.center,
                   ),

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-
 import '../models/rooms.dart';
+
+//Alertdialog(confirms room booking) when tapping any room,
+//showing room image and it's details
 
 class RoomBookingDialog extends StatelessWidget {
   final Room room;
 
-  RoomBookingDialog({required this.room});
+  const RoomBookingDialog({super.key, required this.room});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class RoomBookingDialog extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 8),
-                    Divider(color: Colors.grey), // Add a horizontal divider
+                    Divider(color: Colors.grey),
                     SizedBox(height: 8),
                     Text(
                       '${room.type} with ${room.view} View',
@@ -39,9 +41,7 @@ class RoomBookingDialog extends StatelessWidget {
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(
-                      height: 8,
-                    ),
+                    SizedBox(height: 8),
                     Text(
                         'Occupation: Max. ${room.capacity} ${room.capacity == 1 ? 'Person' : 'People'}'),
                   ],
