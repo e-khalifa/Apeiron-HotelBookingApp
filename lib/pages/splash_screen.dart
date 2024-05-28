@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
       child: Align(
         alignment: Alignment.bottomRight,
         child: Padding(
-          padding: const EdgeInsets.only(bottom: 40.0, right: 20.0),
+          padding: const EdgeInsets.only(bottom: 35.0, right: 20.0),
           //button fading in
           child: AnimatedOpacity(
             opacity: showButton ? 1.0 : 0.0,
@@ -63,7 +63,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       fontFamily: 'AnticDidone',
                     ),
                   ),
-                  SizedBox(width: 60),
+                  SizedBox(width: 70),
                   Icon(Icons.arrow_right_alt),
                 ],
               ),
