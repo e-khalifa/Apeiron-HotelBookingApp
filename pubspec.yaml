@@ -89,7 +89,7 @@ flutter:
     
     - family: AnticDidone
       fonts:
-        - asset: assets/fonts/AnticDidone-Regular
+        - asset: assets/fonts/AnticDidone-Regular.ttf
 
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
